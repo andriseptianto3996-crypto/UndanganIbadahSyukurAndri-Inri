@@ -360,11 +360,22 @@ Made with Merangkai ASA
 
 <script>
 
-function openInvitation(){
+function openInvitation() {
 
-document.querySelector(".hero").style.display="none";
+    document.querySelector(".hero").style.display = "none";
 
-document.getElementById("music").play();
+    const music = document.getElementById("music");
+
+    music.volume = 0.4; // volume 40%
+
+    music.play().catch(function(err){
+        console.log("Musik tidak dapat diputar:", err);
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
