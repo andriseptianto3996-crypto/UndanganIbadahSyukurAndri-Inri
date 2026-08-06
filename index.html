@@ -390,6 +390,14 @@ document.getElementById("seconds").innerHTML=Math.floor((gap%(1000*60))/1000);
 
 },1000);
 
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("to");
+
+if (guest) {
+    document.getElementById("guestName").textContent =
+        decodeURIComponent(guest.replace(/\+/g, " "));
+}
+    
 </script>
 
 </body>
